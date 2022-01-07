@@ -1,4 +1,4 @@
-.App {
+/* .App {
   text-align: center;
 }
 
@@ -35,4 +35,18 @@
   to {
     transform: rotate(360deg);
   }
+} */
+
+@import '~antd/dist/antd.css';
+
+.custom-steps {
+  padding-top: 30px;
 }
+
+.customCollapse {
+  padding-bottom: 0px;
+}
+
+/* .ant-input, .ant-select-selection-item {
+  padding: 10px 20px
+} */
