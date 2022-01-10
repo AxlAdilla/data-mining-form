@@ -62,7 +62,7 @@ function App() {
       await new Promise(r => setTimeout(r, 1000));
       return 'ok';
     },
-    total: 4,
+    total: 3,
   });
   
   function handleWindowSizeChange() {
@@ -105,17 +105,18 @@ function App() {
       isMobile={isMobile}
       form={form}
       dataCasa={dataCasa}
-    />,
-    <Review
-      tailLayout={tailLayout}
-      gotoStep={gotoStep}
-      current={current}
-      formLoading={formLoading}
       submit={submit}
-      isMobile={isMobile}
-      form={form}
-      dataCasa={dataCasa}
     />,
+    // <Review
+    //   tailLayout={tailLayout}
+    //   gotoStep={gotoStep}
+    //   current={current}
+    //   formLoading={formLoading}
+    //   submit={submit}
+    //   isMobile={isMobile}
+    //   form={form}
+    //   dataCasa={dataCasa}
+    // />,
     <ResultSubmit
       gotoStep={gotoStep}
       form={form}

@@ -1,6 +1,8 @@
 import { Button, Result } from "antd";
 
 export default function ResultSubmit(props) {
+  props.form.resetFields();
+
   return (
     <>
       <Result

@@ -14,22 +14,18 @@ export default function MobileSteps(props) {
         >
           <Step
             title="Data Diri"
-            status={props.setStepStatus(0)}
             icon={<UserOutlined />}
           />
           <Step
             title="Kuisioner"
-            status={props.setStepStatus(1)}
             icon={<SolutionOutlined />}
           />
-          <Step
+          {/* <Step
             title="Review"
-            status={props.setStepStatus(2)}
             icon={<FileSearchOutlined />}
-          />
+          /> */}
           <Step
             title="Selesai"
-            status={props.setStepStatus(3)}
             icon={<SmileOutlined />}
           />
         </Steps>

@@ -1,9 +1,27 @@
-import { Button, Checkbox, Col, Divider, Form, Input, Radio, Row } from "antd";
+import { Button, Modal, Checkbox, Col, Divider, Form, Input, Radio, Row } from "antd";
 import { useState } from "react";
+import { ExclamationCircleOutlined } from '@ant-design/icons';
 
 export default function Kuisioner(props) {
   const [checkedSentimentKalimat, setCheckedSentimentKalimat] = useState("NEU");
   const [sentimentKata, setSentimentKata] = useState(props.form.getFieldValue().sentimentKata);
+
+  function confirm() {
+    Modal.confirm({
+      title: 'Confirm',
+      icon: <ExclamationCircleOutlined />,
+      content: 'Pastikan data-data yang diisi sudah benar',
+      okText: 'Kirim',
+      onOk:() => {
+        props.submit().then(result => {
+          if (result === 'ok') {
+            props.gotoStep(props.current + 1);
+          }
+        });
+      },
+      cancelText: 'Batal',
+    });
+  }  
 
   function handleSentimentKataChange(key, value) {
     let valSentimentKata = props.form.getFieldValue().sentimentKata
@@ -158,7 +176,8 @@ export default function Kuisioner(props) {
               <Button onClick={() => props.gotoStep(props.current - 1)} block>Previous</Button>
             </Col>
             <Col span={24} style={{marginTop: 10}}>
-              <Button type="primary" onClick={() => props.gotoStep(props.current + 1)} block>Next</Button>
+              {/* <Button type="primary" onClick={() => props.gotoStep(props.current + 1)} block>Next</Button> */}
+              <Button type="primary" onClick={() => confirm()} block>Next</Button>
             </Col>
           </>
           :
@@ -167,7 +186,8 @@ export default function Kuisioner(props) {
               <Button onClick={() => props.gotoStep(props.current - 1)} block>Previous</Button>
             </Col>
             <Col span={6} offset={12}>
-              <Button type="primary" onClick={() => props.gotoStep(props.current + 1)} block>Next</Button>
+              <Button type="primary" onClick={() => confirm()} block>Next</Button>
+              {/* <Button type="primary" onClick={() => props.gotoStep(props.current + 1)} block>Next</Button> */}
             </Col>
           </>
         }

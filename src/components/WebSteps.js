@@ -17,10 +17,10 @@ export default function WebSteps(props) {
         title="Kuisioner"
         icon={<SolutionOutlined />}
       />
-      <Step
+      {/* <Step
         title="Review"
         icon={<FileSearchOutlined />}
-      />
+      /> */}
       <Step
         title="Selesai"
         icon={<SmileOutlined />}
