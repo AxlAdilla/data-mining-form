@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/data-mining-form/static/css/main.9c9f0c7f.css",
-    "main.js": "/data-mining-form/static/js/main.ccf917be.js",
+    "main.js": "/data-mining-form/static/js/main.dd4a17aa.js",
     "static/js/787.afc2e617.chunk.js": "/data-mining-form/static/js/787.afc2e617.chunk.js",
     "index.html": "/data-mining-form/index.html",
     "main.9c9f0c7f.css.map": "/data-mining-form/static/css/main.9c9f0c7f.css.map",
-    "main.ccf917be.js.map": "/data-mining-form/static/js/main.ccf917be.js.map",
+    "main.dd4a17aa.js.map": "/data-mining-form/static/js/main.dd4a17aa.js.map",
     "787.afc2e617.chunk.js.map": "/data-mining-form/static/js/787.afc2e617.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.9c9f0c7f.css",
-    "static/js/main.ccf917be.js"
+    "static/js/main.dd4a17aa.js"
   ]
 }
