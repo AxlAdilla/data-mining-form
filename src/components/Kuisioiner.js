@@ -37,19 +37,23 @@ export default function Kuisioner(props) {
     for (const key in props.dataCasa.words) {
       const word = props.dataCasa.words[key];
       wordsJsx.push(
-        <Row key={"word-"+ key} style={{paddingTop:5}}>
-          <Col xl={2} lg={2} md={2} sm={0} xs={0} style={{fontSize: 16}}></Col>
-          <Col xl={2} lg={2} md={2} sm={24} xs={24} style={{fontSize: 16}}>
-            {word}
-          </Col>
-          <Col xl={20} lg={20} md={20} sm={24} xs={24} style={{textAlign:"center"}}>
-            <Radio.Group size="large" defaultValue={sentimentKata[key]} buttonStyle="solid">
-              <Radio.Button onChange={() => handleSentimentKataChange(key, "POS")} value="POS">Positif</Radio.Button>
-              <Radio.Button onChange={() => handleSentimentKataChange(key, "NEG")} value="NEG">Negatif</Radio.Button>
-              <Radio.Button onChange={() => handleSentimentKataChange(key, "NEU")} value="NEU">Netral</Radio.Button>
-            </Radio.Group>
-          </Col>
-        </Row>
+        <div key={"word-"+ key} style={{paddingTop:5}}>
+          <Row  style={{paddingTop:5}}>
+            <Col xl={2} lg={2} md={2} sm={0} xs={0} ><b>2.{parseInt(key)+1}</b></Col>
+            <Col xl={22} lg={22} md={22} sm={24} xs={24} >
+              Apakah sentimen dari kata <b>"{word}"</b> ? (Pilih antara Positif / Negatif / Netral)
+            </Col>
+          </Row>
+          <Row>
+            <Col xl={24} lg={24} md={24} sm={24} xs={24} style={{textAlign:"center"}}>
+              <Radio.Group size="large" defaultValue={sentimentKata[key]} buttonStyle="solid">
+                <Radio.Button onChange={() => handleSentimentKataChange(key, "POS")} value="POS">Positif</Radio.Button>
+                <Radio.Button onChange={() => handleSentimentKataChange(key, "NEG")} value="NEG">Negatif</Radio.Button>
+                <Radio.Button onChange={() => handleSentimentKataChange(key, "NEU")} value="NEU">Netral</Radio.Button>
+              </Radio.Group>
+            </Col>
+          </Row>
+        </div>
       )
     }
     return (
@@ -78,9 +82,9 @@ export default function Kuisioner(props) {
           </Col>
         </Row>
         <Row style={{paddingTop: 20, paddingLeft: 20}}>
-          <Col span={2}>1</Col>
+          <Col span={2}><b>1</b></Col>
           <Col span={22}>
-            Apakah polaritas sentimen yang terkandung pada kalimat diatas ?
+            Apakah polaritas sentimen yang terkandung pada kalimat diatas ? (Pilih antara Positif / Negatif / Netral)
           </Col>
         </Row>
         <Form.Item
@@ -101,18 +105,18 @@ export default function Kuisioner(props) {
           </Radio.Group>
         </Form.Item>
         <Row style={{paddingTop: 20, paddingLeft: 20}}>
-          <Col span={2}>2</Col>
+          <Col span={2}><b>2</b></Col>
           <Col span={22}>
-            Kata-kata apa saja yang mengandung sentimen ?
+            Apakah polaritas sentimen dari masing-masing kata dibawah ini ?
           </Col>
         </Row>
         <div style={{paddingTop: 20, paddingLeft: 20, display: 'flex', flexDirection:"column", justifyContent: 'center'}}>
           {questionTwo()}
         </div>
         <Row style={{paddingTop: 20, paddingLeft: 20}}>
-          <Col span={2}>3</Col>
+          <Col span={2}><b>3</b></Col>
           <Col span={22}>
-            Aspek apa yang menjadi sorotan pada kalimat diatas ?
+            Apakah topik yang menjadi pembicaraan pada kalimat diatas ?
           </Col>
         </Row>
         <div style={{paddingTop: 20, paddingLeft: 20, display: 'flex', justifyContent: 'center'}}>
